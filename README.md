@@ -26,7 +26,7 @@ jobs:
     
     steps:
     - name: Compile Mod
-      uses: xxanqw/compilation@main
+      uses: xxanqw/compilation@v1
       
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
@@ -50,7 +50,7 @@ jobs:
     
     steps:
     - name: Compile Mod with Java 17
-      uses: xxanqw/compilation@main
+      uses: xxanqw/compilation@v1
       with:
         java-version: "17"
       
