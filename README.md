@@ -11,6 +11,9 @@ A simple GitHub Action to compile your Minecraft mod using Gradle.
 
 ## Usage
 
+>[!NOTE]
+>You need to checkout your repository before running this action
+
 ### Basic Usage (Java 21 - default)
 
 ```yaml
@@ -25,8 +28,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+          fetch-depth: 0
+
     - name: Compile Mod
-      uses: xxanqw/compilation@v1
+      uses: xxanqw/compilation@v3
       
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
@@ -49,8 +57,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+          fetch-depth: 0
+
     - name: Compile Mod with Java 17
-      uses: xxanqw/compilation@v1
+      uses: xxanqw/compilation@v3
       with:
         java-version: "17"
       
