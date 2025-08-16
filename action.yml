@@ -10,17 +10,9 @@ inputs:
     required: false
     default: "21"
 
-on:
-  push:
-  pull_request:
-
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-
     - name: Set up JDK
       uses: actions/setup-java@v3
       with:
